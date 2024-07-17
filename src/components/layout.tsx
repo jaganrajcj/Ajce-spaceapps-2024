@@ -1,10 +1,8 @@
-"use client";
-
 import React from "react";
 import { ThemeProvider } from "@material-tailwind/react";
 
 interface LayoutProps {
-  children: React.ReactNode | null;
+  children: React.ReactNode;
 }
 
 export function Layout({ children }: LayoutProps) {

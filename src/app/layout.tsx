@@ -11,8 +11,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Nasa Space Apps Challenge 2024 - AJCE",
-  description:
-    "",
+  description: "",
 };
 
 export default function RootLayout({
@@ -30,18 +29,18 @@ export default function RootLayout({
         ></script>
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </head>
-      <body className={roboto.className}>
-        <Layout>
+      <Layout>
+        <body className={roboto.className}>
           {children}
-        </Layout>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
-        />
-      </body>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossOrigin="anonymous"
+            referrerPolicy="no-referrer"
+          />
+        </body>
+      </Layout>
     </html>
   );
 }
