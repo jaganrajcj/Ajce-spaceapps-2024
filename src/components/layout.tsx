@@ -6,7 +6,7 @@ interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps) {
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return <>{children}</>;
 }
 
 export default Layout;

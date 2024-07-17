@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import { Layout } from "@/components";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -29,7 +28,7 @@ export default function RootLayout({
         ></script>
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </head>
-      <Layout>
+      {/* <Layout> */}
         <body className={roboto.className}>
           {children}
           <link
@@ -40,7 +39,7 @@ export default function RootLayout({
             referrerPolicy="no-referrer"
           />
         </body>
-      </Layout>
+      {/* </Layout> */}
     </html>
   );
 }
