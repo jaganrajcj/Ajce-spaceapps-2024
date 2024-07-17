@@ -13,6 +13,7 @@ import ContactUs from "@/components/contact";
 export default function Portfolio() {
   return (
     <>
+    
       <Navbar />
       <Hero />
       {/* <SponsoredBy /> */}

@@ -8,10 +8,10 @@ interface StatsCardProps {
 export function StatsCard({ count, title }: StatsCardProps) {
   return (
     <Card color="transparent" shadow={false}>
-      <Typography variant="h1" className="font-bold" color="blue-gray">
+      <Typography variant="h1" className="font-bold" color="white">
         {count}
       </Typography>
-      <Typography variant="h6" color="blue-gray" className="mt-1 font-medium">
+      <Typography variant="h6" color="white" className="mt-1 font-medium text-gray-400">
         {title}
       </Typography>
     </Card>

@@ -14,30 +14,30 @@ export function Footer() {
             href="https://www.material-tailwind.com"
             target="_blank"
             variant="h6"
-            className="text-gray-900"
+            className="text-gray-200"
           >
             Space Apps AJCE
           </Typography>
 
           <div className="flex w-fit justify-center gap-2">
             <Link href={"https://x.com/ajcekply"}>
-              <IconButton size="sm" color="gray" variant="text">
+              <IconButton size="sm" color="white" variant="text">
                 <i className="fa-brands fa-twitter text-lg" />
               </IconButton>
             </Link>
             <Link href={"https://www.youtube.com/channel/UCHykw_xG7JItIfObqZJZJZA"}>
-              <IconButton size="sm" color="gray" variant="text">
+              <IconButton size="sm" color="white" variant="text">
                 <i className="fa-brands fa-youtube text-lg" />
               </IconButton>
             </Link>
             <Link href={"https://www.instagram.com/ajce.in/?hl=en"}>
-              <IconButton size="sm" color="gray" variant="text">
+              <IconButton size="sm" color="white" variant="text">
                 <i className="fa-brands fa-instagram text-lg" />
               </IconButton>
             </Link>
 
             <Link href={"https://www.linkedin.com/school/ajce/"}>
-              <IconButton size="sm" color="gray" variant="text">
+              <IconButton size="sm" color="white" variant="text">
                 <i className="fa-brands fa-linkedin text-lg" />
               </IconButton>
             </Link>
@@ -45,7 +45,7 @@ export function Footer() {
         </div>
         <Typography
           color="blue-gray"
-          className="text-center mt-12 font-normal !text-gray-700"
+          className="text-center mt-12 font-normal !text-gray-500"
         >
           &copy; {CURRENT_YEAR} Made by AJCE Web Team
         </Typography>

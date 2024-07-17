@@ -60,12 +60,12 @@ export function Faq() {
     <section className="py-8 px-8 lg:py-20">
       <div className="container mx-auto">
         <div className="text-center">
-          <Typography variant="h1" color="blue-gray" className="mb-4">
+          <Typography variant="h1" color="white" className="mb-4">
             Frequently asked questions
           </Typography>
           <Typography
             variant="lead"
-            className="mx-auto mb-24 lg:w-3/5 !text-gray-500"
+            className="mx-auto mb-24 lg:w-3/5 !text-gray-400"
           >
             Welcome to the our FAQ section. We&apos;re here to address your most
             common queries and provide you with the information you need to make
@@ -80,13 +80,13 @@ export function Faq() {
               open={open === key + 1}
               onClick={() => handleOpen(key + 1)}
             >
-              <AccordionHeader className="text-left text-gray-900">
+              <AccordionHeader className="text-left text-gray-300">
                 {title}
               </AccordionHeader>
               <AccordionBody>
                 <Typography
                   color="blue-gray"
-                  className="font-normal text-gray-500"
+                  className="font-normal text-gray-400"
                 >
                   {desc}
                 </Typography>

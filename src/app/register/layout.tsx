@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Footer, Layout } from "@/components";
 import Header from "./Header";
+import { BackgroundBeams } from "@/components/background-beams";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
     <div className="">
         <Header />
         {children}
+        <BackgroundBeams />
         {/* <Footer /> */}
     </div>
   );

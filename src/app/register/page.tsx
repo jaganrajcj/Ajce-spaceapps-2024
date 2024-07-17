@@ -2,7 +2,7 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className="relative min-h-screen w-full mt-0 pt-20 md:pt-32 bg-[url('/image/event.png')] bg-cover bg-no-repeat pb-5">
+    <div className="relative min-h-screen w-full mt-0 pt-20 md:pt-32 pb-5">
       <div className="rounded-2xl max-w-[95%] bg-gray-900/70 backdrop-blur-lg p-8 md:p-12 md:max-w-7xl mx-auto">
         <h2 className="text-lg font-semibold leading-7 text-gray-200">
           Register your team

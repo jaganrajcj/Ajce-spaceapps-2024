@@ -16,7 +16,7 @@ export function EventContent() {
     <section className="py-8 px-8 lg:py-20">
       <Tabs value="Day1" className="mb-8">
         <div className="w-full flex mb-8 flex-col items-center">
-          <TabsHeader className="h-12 w-72 md:w-96">
+          <TabsHeader className="h-12 w-72 md:w-96 bg-gray-900/60">
             <Tab value="Day1" className="font-medium">
               Day 1
             </Tab>

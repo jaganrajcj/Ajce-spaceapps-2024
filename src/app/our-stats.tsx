@@ -31,7 +31,7 @@ export function OurStats() {
         </Typography>
         <Typography
           className="text-5xl font-bold leading-tight lg:w-3/4"
-          color="blue-gray"
+          color="white"
         >
           Event Highlights
         </Typography>

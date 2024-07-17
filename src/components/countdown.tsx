@@ -5,25 +5,25 @@ import Countdown, { CountdownRenderProps } from "react-countdown";
 // Random component
 const Completionist: React.FC = () => (
   <div className="grid grid-cols-4 gap-4">
-    <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+    <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
       <span className="text-5xl font-bold text-cyan-500 opacity-100 text-center">
         00
       </span>
       <span className="text-center text-gray-200">Days</span>
     </div>
-    <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+    <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
       <span className="text-5xl font-bold text-red-600 opacity-100 text-center">
         00
       </span>
       <span className="text-center text-gray-200">Hours</span>
     </div>
-    <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+    <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
       <span className="text-5xl font-bold text-purple-500 opacity-100 text-center">
         00
       </span>
       <span className="text-center text-gray-200">Minutes</span>
     </div>
-    <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+    <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
       <span className="text-5xl font-bold text-orange-500 opacity-100 text-center">
         00
       </span>
@@ -47,25 +47,25 @@ const renderer: React.FC<CountdownRenderProps> = ({
     // Render a countdown
     return (
       <div className="grid grid-cols-4 gap-4">
-        <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+        <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
           <span className="text-5xl font-bold text-cyan-500 opacity-100 text-center">
             {days}
           </span>
           <span className="text-center text-gray-200">Days</span>
         </div>
-        <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+        <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
           <span className="text-5xl font-bold text-red-600 opacity-100 text-center">
             {hours}
           </span>
           <span className="text-center text-gray-200">Hours</span>
         </div>
-        <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+        <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
           <span className="text-5xl font-bold text-purple-500 opacity-100 text-center">
             {minutes}
           </span>
           <span className="text-center text-gray-200">Minutes</span>
         </div>
-        <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+        <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
           <span className="text-5xl font-bold text-orange-500 opacity-100 text-center">
             {seconds}
           </span>
@@ -92,25 +92,25 @@ const CountDown: React.FC = () => {
         <Countdown date={eventDate} renderer={renderer} />
       ) : (
         <div className="grid grid-cols-4 gap-4">
-          <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+          <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
             <span className="text-5xl font-bold text-cyan-500 opacity-100 text-center">
               00
             </span>
             <span className="text-center text-gray-200">Days</span>
           </div>
-          <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+          <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
             <span className="text-5xl font-bold text-red-600 opacity-100 text-center">
               00
             </span>
             <span className="text-center text-gray-200">Hours</span>
           </div>
-          <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+          <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
             <span className="text-5xl font-bold text-purple-500 opacity-100 text-center">
               00
             </span>
             <span className="text-center text-gray-200">Minutes</span>
           </div>
-          <div className="rounded-xl backdrop-blur-lg w-20 h-20 md:w-full md:h-full md:p-5 bg-black/40 flex flex-col justify-center hover:scale-110 duration-300">
+          <div className="rounded-xl backdrop-blur-sm w-20 h-20 md:w-full md:h-full md:p-5 bg-white/10 flex flex-col justify-center hover:scale-110 duration-300">
             <span className="text-5xl font-bold text-orange-500 opacity-100 text-center">
               00
             </span>

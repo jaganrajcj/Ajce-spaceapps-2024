@@ -1,3 +1,4 @@
+import { BackgroundBeams } from "@/components/background-beams";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
@@ -29,16 +30,18 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </head>
       {/* <Layout> */}
-        <body className={roboto.className}>
-          {children}
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-            crossOrigin="anonymous"
-            referrerPolicy="no-referrer"
-          />
-        </body>
+      <body className={`${roboto.className}`}>
+        {children}
+        {/* <BackgroundBeams /> */}
+
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </body>
       {/* </Layout> */}
     </html>
   );

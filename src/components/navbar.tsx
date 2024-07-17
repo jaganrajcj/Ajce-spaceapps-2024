@@ -110,7 +110,7 @@ export function Navbar() {
             Log in
           </Button> */}
           <Link href="/register">
-            <Button color={isScrolling ? "gray" : "white"}>Register</Button>
+            <Button color={isScrolling ? "white" : "white"}>Register</Button>
           </Link>
         </div>
         <IconButton
