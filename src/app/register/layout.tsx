@@ -26,7 +26,7 @@ export default function RootLayout({
     <div className="">
         <Header />
         {children}
-        <BackgroundBeams />
+        {/* <BackgroundBeams /> */}
         {/* <Footer /> */}
     </div>
   );

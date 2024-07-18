@@ -127,7 +127,7 @@ export function Navbar() {
         </IconButton>
       </div>
       <Collapse open={open}>
-        <div className="container mx-auto mt-4 rounded-lg bg-white px-6 py-5">
+        <div className="container mx-auto mt-4 rounded-lg bg-white/70 backdrop-blur-sm px-6 py-5">
           <ul className="flex flex-col gap-4 text-gray-900">
             {NAV_MENU.map(({ name, icon: Icon, href }) => (
               <NavItem key={name} href={href}>

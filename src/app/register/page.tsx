@@ -1,3 +1,4 @@
+import { BackgroundBeams } from "@/components/background-beams";
 import React from "react";
 
 const Page = () => {
@@ -173,6 +174,7 @@ const Page = () => {
           Register
         </div>
       </div>
+      {/* <BackgroundBeams className="z-20"/> */}
     </div>
   );
 };
