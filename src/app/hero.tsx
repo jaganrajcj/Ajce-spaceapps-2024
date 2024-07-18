@@ -63,7 +63,7 @@ function Hero() {
               height={1000}
               width={800}
               alt="astronaut"
-              className="hidden lg:block"
+              className="hidden lg:block hover:scale-x-105 hover:-rotate-3 duration-300"
             />
 
             {/* Different */}
