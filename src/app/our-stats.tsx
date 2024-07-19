@@ -13,12 +13,12 @@ const STATS = [
     title: "Teams",
   },
   {
-    count: "20",
-    title: "Awards",
-  },
-  {
     count: "2",
     title: "Days",
+  },
+  {
+    count: "1 Lakh",
+    title: "Worth of prizes",
   },
 ];
 

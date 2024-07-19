@@ -27,6 +27,7 @@ const Page = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<RegisterSchemaType>({
     resolver: zodResolver(RegisterSchema),
@@ -38,25 +39,25 @@ const Page = () => {
       display: false,
       message: "",
       success: true,
-    })
+    });
 
     const res = await registerUser(data);
 
     setIsLoading(false);
 
-    if(res.success) {
+    if (res.success) {
       setMessage({
         display: true,
         message: res.message,
-        success: true
-      })
-    }
-    else {
+        success: true,
+      });
+      reset();
+    } else {
       setMessage({
         display: false,
         message: res.message,
-        success: false
-      })
+        success: false,
+      });
     }
   };
 
@@ -70,8 +71,17 @@ const Page = () => {
           Type in your team details and we will be in touch
         </p>
         {message?.display && (
-          <p className={`mt-1 text-sm font-semibold leading-6 flex items-center gap-1 ${message?.success ? 'text-green-500': 'text-red-500'} `}>
-          {message?.success ? <CheckCheck className="w-[17px] h-[17px]"/>: <CircleX className="w-[15px] h-[15px]"/>}{message.message}
+          <p
+            className={`mt-1 text-sm font-semibold leading-6 flex items-center gap-1 ${
+              message?.success ? "text-green-500" : "text-red-500"
+            } `}
+          >
+            {message?.success ? (
+              <CheckCheck className="w-[17px] h-[17px]" />
+            ) : (
+              <CircleX className="w-[15px] h-[15px]" />
+            )}
+            {message.message}
           </p>
         )}
 

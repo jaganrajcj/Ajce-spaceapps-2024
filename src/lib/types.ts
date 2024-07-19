@@ -11,7 +11,7 @@ export const RegisterSchema = z.object({
             /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
             "Invalid email format"
         ),
-    phone: z.string().regex(/^\d{10}$/, "Phone number is required"),
+    phone: z.string().regex(/^\d{10}$/, "Phone number must be exact 10 digits"),
     school: z.string().min(1, "School / College name is required"),
     district: z
         .string()
@@ -20,7 +20,7 @@ export const RegisterSchema = z.object({
     teamLead: z.string().min(3, "Team Lead's name is required"),
     teamLeadPhn: z
         .string()
-        .regex(/^\d{10}$/, "Team Lead's phone number is required"),
+        .regex(/^\d{10}$/, "Team Lead's phone number must be exact 10 digits"),
 });
 
 export type RegistrationType = {
