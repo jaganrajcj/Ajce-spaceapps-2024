@@ -60,8 +60,8 @@ function Hero() {
 
             <Image
               src={"/image/astronaut.png"}
-              height={1000}
-              width={800}
+              height={800}
+              width={600}
               alt="astronaut"
               className="hidden lg:block hover:scale-x-105 hover:-rotate-3 duration-300"
             />
