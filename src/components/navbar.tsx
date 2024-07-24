@@ -109,7 +109,7 @@ export function Navbar() {
           {/* <Button color={isScrolling ? "gray" : "white"} variant="text">
             Log in
           </Button> */}
-          <Link href="/register">
+          <Link href="#register">
             <Button color={isScrolling ? "white" : "white"}>Register</Button>
           </Link>
         </div>
@@ -138,7 +138,7 @@ export function Navbar() {
           </ul>
           <div className="mt-6 flex items-center gap-4">
             {/* <Button variant="text">Log in</Button> */}
-            <Link href="/register">
+            <Link href="#register">
               <Button color="gray">Register</Button>
             </Link>
           </div>

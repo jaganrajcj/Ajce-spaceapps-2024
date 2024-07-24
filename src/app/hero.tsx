@@ -52,7 +52,7 @@ function Hero() {
               </Link> */}
             </div>
           </div>
-          <div className="order-2 lg:order-2 mt-8 lg:mt-0">
+          <div className="order-2 lg:order-2 mt-8 lg:mt-0 md:overflow-hidden">
             {/* Additional content goes here */}
             {/* <Typography variant="h3" color="white" className="mb-2">
               Additional Information

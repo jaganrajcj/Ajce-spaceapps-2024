@@ -51,8 +51,8 @@ const eventSchedule = [
 
 export function EventContent() {
   return (
-    <section className="py-8 px-2 lg:py-20">
-      <Tabs value="Day1" className="mb-8">
+    <section className="pt-8 px-2 lg:pt-20">
+      <Tabs value="Day1" className="">
         <div className="w-full flex mb-8 flex-col items-center">
           <TabsHeader className="h-12 w-72 md:w-96 bg-gray-900/60">
             <Tab value="Day1" className="font-medium">
@@ -63,7 +63,7 @@ export function EventContent() {
             </Tab>
           </TabsHeader>
         </div>
-        <TabsBody>
+        <TabsBody className="">
           {/* {console.log("eventSchedule:", eventSchedule);} */}
           <TabPanel value={"Day1"}>
             <Day
@@ -81,7 +81,7 @@ export function EventContent() {
           </TabPanel>
         </TabsBody>
       </Tabs>
-      <div className="mx-auto container"></div>
+      {/* <div className="mx-auto container"></div> */}
     </section>
   );
 }

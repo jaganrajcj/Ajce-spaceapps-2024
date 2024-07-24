@@ -19,7 +19,7 @@ const Day = ({
   return (
     <div
       id="contact"
-      className="relative flex w-full py-10 mb-5 md:mb-20 flex-col justify-center items-center bg-gray-900 md:max-w-7xl mx-auto rounded-2xl p-5 text-white"
+      className="relative flex w-full py-10  flex-col justify-center items-center bg-gray-900 md:max-w-7xl mx-auto rounded-2xl p-5 text-white"
     >
       <div
         className={`py-5 absolute inset-0 flex justify-center items-center text-gray-600 font-semibold text-8xl opacity-20`}

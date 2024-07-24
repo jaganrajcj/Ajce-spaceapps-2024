@@ -8,6 +8,7 @@ import OurStats from "./our-stats";
 import EventContent from "./event-content";
 import Faq from "./faq";
 import ContactUs from "@/components/contact";
+import Register from "@/components/registers";
 
 export default function Portfolio() {
   return (
@@ -18,6 +19,7 @@ export default function Portfolio() {
       <AboutEvent />
       <OurStats />
       <EventContent />
+      <Register />
       <Faq />
       <ContactUs />
       <Footer />
