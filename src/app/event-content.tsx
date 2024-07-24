@@ -75,7 +75,7 @@ export function EventContent() {
           <TabPanel value={"Day2"}>
             <Day
               day={"02"}
-              date="SATURDAY, OCTOBER 6"
+              date="SUNDAY, OCTOBER 6"
               details={eventSchedule[1]}
             />
           </TabPanel>
