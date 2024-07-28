@@ -133,7 +133,7 @@ export function NavHeader() {
             </MenuItem>
           </MenuList>
         </Menu>
-        <IconButton
+        {/* <IconButton
           size="sm"
           variant="text"
           color="blue-gray"
@@ -145,16 +145,16 @@ export function NavHeader() {
           ) : (
             <Bars3Icon className="h-6 w-6" strokeWidth={2} />
           )}
-        </IconButton>
+        </IconButton> */}
       </div>
-      <Collapse open={open}>
-        <div className="mt-2 rounded-xl bg-white py-2">
+      {/* <Collapse open={open}>
+        <div className="mt-2 rounded-xl bg-white py-2"> */}
           {/* <NavList /> */}
           {/* <Button className="mb-2" fullWidth>
             Sign in
           </Button> */}
-        </div>
-      </Collapse>
+        {/* </div>
+      </Collapse> */}
     </Navbar>
   );
 }

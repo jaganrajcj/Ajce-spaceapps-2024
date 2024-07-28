@@ -3,6 +3,8 @@ import bcrypt from 'bcrypt';
 
 import { RegisterSchema, RegistrationType } from "@/lib/types"
 import { PrismaClient } from '@prisma/client';
+import nodemailer from 'nodemailer'
+import { mailTemplate } from '@/lib/mailTemplate';
 
 export const registerUser = async (data: RegistrationType) => {
     try {
@@ -30,7 +32,7 @@ export const registerUser = async (data: RegistrationType) => {
                 teamLeadPhone: validate.data.teamLeadPhn
             }
         });
-
+        sendConfirmationEmail(validate.data.firstName + ' ' + validate.data.lastName || '', validate.data.email);
         return {
             success: true,
             message: "Registration successful, we'll be in touch with you shortly!",
@@ -46,6 +48,25 @@ export const registerUser = async (data: RegistrationType) => {
         };
 
     }
+}
+
+const sendConfirmationEmail = async (name: string, email: string) => {
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false, // Use `true` for port 465, `false` for all other ports
+        auth: {
+            user: process.env.EMAIL_ID,
+            pass: process.env.EMAIL_PASSWORD,
+        },
+    })
+
+    const res = await transporter.sendMail({
+        from: '"NASA Space Apps AJCE" nasaspaceapps@ajce.in', 
+        to: email, 
+        subject: "NASA Space Apps Challenge 2024 Registration Confirmation", 
+        html: mailTemplate(name)
+    })
 }
 
 
