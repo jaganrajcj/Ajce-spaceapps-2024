@@ -1,4 +1,5 @@
 import { Typography, Button, IconButton } from "@material-tailwind/react";
+import Image from "next/image";
 import Link from "next/link";
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -9,15 +10,10 @@ export function Footer() {
     <footer className="pb-5 p-10 md:pt-10">
       <div className="container flex flex-col mx-auto">
         <div className="flex flex-col md:flex-row items-center !justify-between">
-          <Typography
-            as="a"
-            href="https://www.material-tailwind.com"
-            target="_blank"
-            variant="h6"
-            className="text-gray-200"
-          >
-            Space Apps AJCE
-          </Typography>
+          <div className="flex gap-2 justify-center items-center">
+            <Image src="/image/ajce.png" alt="Logo" width={45} height={45} />
+            <Typography className="text-gray-200 font-semibold text-lg"> SpaceApps AJCE</Typography>
+          </div>
 
           <div className="flex w-fit justify-center gap-2">
             <Link href={"https://x.com/ajcekply"}>
@@ -25,7 +21,9 @@ export function Footer() {
                 <i className="fa-brands fa-twitter text-lg" />
               </IconButton>
             </Link>
-            <Link href={"https://www.youtube.com/channel/UCHykw_xG7JItIfObqZJZJZA"}>
+            <Link
+              href={"https://www.youtube.com/channel/UCHykw_xG7JItIfObqZJZJZA"}
+            >
               <IconButton size="sm" color="white" variant="text">
                 <i className="fa-brands fa-youtube text-lg" />
               </IconButton>
