@@ -14,9 +14,6 @@ const LoginPage = () => {
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl");
   const router = useRouter();
 
   const handleSignIn = async () => {
@@ -34,7 +31,7 @@ const LoginPage = () => {
     const res = await signIn("credentials", {
       email: email,
       password: password,
-      callbackUrl: callbackUrl ?? "/internal/e2dc6cbc80e73397/dashboard",
+      callbackUrl: "/internal/e2dc6cbc80e73397/dashboard",
       redirect: false,
     });
 
@@ -42,7 +39,7 @@ const LoginPage = () => {
       setLoading(false);
       setError("Invalid Email or Password");
     } else {
-      router.push(callbackUrl ?? "/internal/e2dc6cbc80e73397/dashboard");
+      router.push("/internal/e2dc6cbc80e73397/dashboard");
     }
     setLoading(false);
     setEmail('')
