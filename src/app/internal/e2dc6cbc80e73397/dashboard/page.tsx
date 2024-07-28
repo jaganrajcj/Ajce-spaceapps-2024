@@ -10,6 +10,7 @@ const Dashboard = () => {
   console.log(session);
 
   return (
+    
     <div className="container mx-auto px-3 lg:px-0 text-blue-gray-900">
       <Typography variant="h4" color="gray" className="">
         Welcome, {session?.user?.name}

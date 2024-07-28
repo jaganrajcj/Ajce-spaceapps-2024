@@ -8,7 +8,7 @@ import { Loader2 } from "lucide-react";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export function Basic() {
+const LoginPage = () => {
   const [passwordShown, setPasswordShown] = useState(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -133,4 +133,4 @@ export function Basic() {
   );
 }
 
-export default Basic;
+export default LoginPage;
