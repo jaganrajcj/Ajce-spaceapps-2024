@@ -67,6 +67,7 @@ const sendConfirmationEmail = async (name: string, email: string) => {
         subject: "NASA Space Apps Challenge 2024 Registration Confirmation", 
         html: mailTemplate(name)
     })
+    console.log(res)
 }
 
 
