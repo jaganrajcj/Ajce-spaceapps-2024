@@ -72,9 +72,8 @@ const Page = () => {
         </p>
         {message?.display && (
           <p
-            className={`mt-1 text-sm font-semibold leading-6 flex items-center gap-1 ${
-              message?.success ? "text-green-500" : "text-red-500"
-            } `}
+            className={`mt-1 text-sm font-semibold leading-6 flex items-center gap-1 ${message?.success ? "text-green-500" : "text-red-500"
+              } `}
           >
             {message?.success ? (
               <CheckCheck className="w-[17px] h-[17px]" />
@@ -239,6 +238,7 @@ const Page = () => {
                 <option value="Wayanad">Wayanad</option>
                 <option value="Kannur">Kannur</option>
                 <option value="Kasaragod">Kasaragod</option>
+                <option value="Non-Keralite">Non-Keralite</option>
               </select>
               {errors.district && (
                 <p className="mt-1 text-sm text-red-500">
