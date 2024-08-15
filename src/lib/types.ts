@@ -15,8 +15,7 @@ export const RegisterSchema = z.object({
     school: z.string().min(1, "School / College name is required"),
     district: z
         .string()
-        .min(1, "District is required")
-        .regex(/^[a-zA-Z\s]+$/, "District name is required"),
+        .min(1, "District name is required"),
     teamLead: z.string().min(3, "Team Lead's name is required"),
     teamLeadPhn: z
         .string()
