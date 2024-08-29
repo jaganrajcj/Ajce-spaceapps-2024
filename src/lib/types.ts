@@ -16,10 +16,10 @@ export const RegisterSchema = z.object({
     district: z
         .string()
         .min(1, "District name is required"),
-    teamLead: z.string().min(3, "Team Lead's name is required"),
+    teamLead: z.string().min(3, "Team Lead's name is required").optional(),
     teamLeadPhn: z
         .string()
-        .regex(/^\d{10}$/, "Team Lead's phone number must be exact 10 digits"),
+        .regex(/^\d{10}$/, "Team Lead's phone number must be exact 10 digits").optional(),
 });
 
 export type RegistrationType = {
@@ -29,6 +29,6 @@ export type RegistrationType = {
     phone: string;
     school: string;
     district: string;
-    teamLead: string;
-    teamLeadPhn: string;
+    teamLead?: string;
+    teamLeadPhn?: string;
 }

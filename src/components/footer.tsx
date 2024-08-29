@@ -38,7 +38,7 @@ export function Footer() {
                 <i className="fa-brands fa-youtube text-lg" />
               </IconButton>
             </Link>
-            <Link href={"https://www.instagram.com/ajce.in/?hl=en"}>
+            <Link href={"https://www.instagram.com/spaceapps_ajce/"}>
               <IconButton size="sm" color="white" variant="text">
                 <i className="fa-brands fa-instagram text-lg" />
               </IconButton>

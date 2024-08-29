@@ -8,6 +8,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { RegisterSchema, RegistrationType } from "@/lib/types";
 import { Ban, CheckCheck, CircleX, Loader2 } from "lucide-react";
 import { registerUser } from "../actions";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from "next/navigation";
+
 
 type RegisterSchemaType = z.infer<typeof RegisterSchema>;
 type messageType = {
@@ -22,6 +26,19 @@ const Page = () => {
     display: false,
     message: "",
     success: true, // true for success and false for error messages
+  });
+  const router = useRouter();
+
+  const notify = () => toast.success('Registration Successful!', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce,
   });
 
   const {
@@ -46,17 +63,42 @@ const Page = () => {
     setIsLoading(false);
 
     if (res.success) {
-      setMessage({
-        display: true,
-        message: res.message,
-        success: true,
+      // setMessage({
+      //   display: true,
+      //   message: res.message,
+      //   success: true,
+      // });
+      reset()
+      toast.success('Registration Successful!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
       });
-      reset();
+      setTimeout(() => {
+        router.push('/')
+      }, 5000);
     } else {
-      setMessage({
-        display: false,
-        message: res.message,
-        success: false,
+      // setMessage({
+      //   display: false,
+      //   message: res.message,
+      //   success: false,
+      // });
+      toast.error('Registration Failed!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
       });
     }
   };
@@ -248,7 +290,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="sm:col-span-3 sm:col-start-1">
+          {/* <div className="sm:col-span-3 sm:col-start-1">
             <label
               htmlFor="teamLead"
               className="block text-sm font-medium leading-6 text-gray-200"
@@ -294,7 +336,7 @@ const Page = () => {
                 </p>
               )}
             </div>
-          </div>
+          </div> */}
 
           <div className="col-span-full">
             <button
@@ -309,8 +351,10 @@ const Page = () => {
             </button>
           </div>
         </form>
+        {/* <button onClick={notify}>Notify!</button> */}
       </div>
       {/* <BackgroundBeams /> */}
+      <ToastContainer />
     </div>
   );
 };

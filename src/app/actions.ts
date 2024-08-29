@@ -6,6 +6,7 @@ import { PrismaClient } from '@prisma/client';
 import nodemailer from 'nodemailer'
 import { mailTemplate } from '@/lib/mailTemplate';
 
+
 export const registerUser = async (data: RegistrationType) => {
     try {
         console.log(data)
@@ -28,8 +29,8 @@ export const registerUser = async (data: RegistrationType) => {
                 phone: validate.data.phone,
                 institution: validate.data.school, // 'school/college' in the schema maps to 'institution' in the database
                 district: validate.data.district,
-                teamLeadName: validate.data.teamLead,
-                teamLeadPhone: validate.data.teamLeadPhn
+                teamLeadName: validate.data.teamLead ?? 'N/A',
+                teamLeadPhone: validate.data.teamLeadPhn ?? 'N/A'
             }
         });
         sendConfirmationEmail(validate.data.firstName + ' ' + validate.data.lastName || '', validate.data.email);
@@ -62,9 +63,9 @@ const sendConfirmationEmail = async (name: string, email: string) => {
     })
 
     const res = await transporter.sendMail({
-        from: '"NASA Space Apps AJCE" nasaspaceapps@ajce.in', 
-        to: email, 
-        subject: "NASA Space Apps Challenge 2024 Registration Confirmation", 
+        from: '"NASA Space Apps AJCE" nasaspaceapps@ajce.in',
+        to: email,
+        subject: "NASA Space Apps Challenge 2024 Registration Confirmation",
         html: mailTemplate(name)
     })
     console.log(res)

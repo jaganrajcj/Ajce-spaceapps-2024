@@ -21,8 +21,8 @@ model Registrations {
   phone         String
   institution   String
   district      String
-  teamLeadName  String
-  teamLeadPhone String
+  teamLeadName  String?
+  teamLeadPhone String?
 }
 
 model User {
