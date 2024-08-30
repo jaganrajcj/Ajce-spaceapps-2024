@@ -29,18 +29,6 @@ const Page = () => {
   });
   const router = useRouter();
 
-  const notify = () => toast.success('Registration Successful!', {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-    transition: Bounce,
-  });
-
   const {
     register,
     handleSubmit,
@@ -290,12 +278,12 @@ const Page = () => {
             </div>
           </div>
 
-          {/* <div className="sm:col-span-3 sm:col-start-1">
+          <div className="sm:col-span-3 sm:col-start-1">
             <label
               htmlFor="teamLead"
               className="block text-sm font-medium leading-6 text-gray-200"
             >
-              Team Lead&apos;s Name
+              Team Lead&apos;s Name (Optional)
             </label>
             <div className="mt-2">
               <input
@@ -319,7 +307,7 @@ const Page = () => {
               htmlFor="teamLeadPhn"
               className="block text-sm font-medium leading-6 text-gray-200"
             >
-              Team Lead&apos;s Phone Number
+              Team Lead&apos;s Phone Number (Optional)
             </label>
             <div className="mt-2">
               <input
@@ -336,7 +324,7 @@ const Page = () => {
                 </p>
               )}
             </div>
-          </div> */}
+          </div>
 
           <div className="col-span-full">
             <button

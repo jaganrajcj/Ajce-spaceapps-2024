@@ -16,10 +16,12 @@ export const RegisterSchema = z.object({
     district: z
         .string()
         .min(1, "District name is required"),
-    teamLead: z.string().min(3, "Team Lead's name is required").optional(),
+    teamLead: z.string().optional(),
     teamLeadPhn: z
         .string()
-        .regex(/^\d{10}$/, "Team Lead's phone number must be exact 10 digits").optional(),
+        .regex(/^\d{10}$/, "Team Lead's phone number must be exact 10 digits")
+        .optional()
+        .or(z.literal('')), // This allows an empty string as a valid input
 });
 
 export type RegistrationType = {
