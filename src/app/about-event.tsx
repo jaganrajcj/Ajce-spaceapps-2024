@@ -2,6 +2,7 @@
 
 import { Typography } from "@material-tailwind/react";
 import AboutCard from "@/components/about-card";
+import AboutCard2 from "@/components/about-card-2";
 
 const EVENT_INFO = [
   {
@@ -36,11 +37,23 @@ export function AboutEvent() {
         NASA Space Apps is an annual international hackathon that brings
         together global participants to tackle challenges in space exploration
         and Earth science. Organized by NASA, it encourages teamwork,
-        creativity, and innovation using NASA&apos;s open data. This event
-        unites experts and enthusiasts from diverse backgrounds, making it a hub
-        for advancing science and technology.
+        creativity, and innovation using NASA&apos;s open data.
       </Typography>
       <div className="mt-8 w-full grid grid-cols-1 md:grid-cols-2 gap-4 ">
+
+        <AboutCard2
+          title="Engage with Space-Inspired Challenges"
+          subTitle="Community"
+          description="When you participate in the NASA International Space Apps Challenge, you'll tackle problems inspired by real issues in space exploration and Earth science. While your solutions may not directly impact space missions, they contribute to a global pool of innovative ideas that NASA and other space agencies value."
+          image="/image/ooPowerofTen.jpg"
+        />
+        <AboutCard
+          title="Engage with Space-Inspired Challenges"
+          subTitle="Community"
+          description="When you participate in the NASA International Space Apps Challenge, you'll tackle problems inspired by real issues in space exploration and Earth science. They contribute to a global pool of innovative ideas that NASA and other space agencies value."
+          image="/image/67993664_9658549.jpg"
+          noHeight
+        />
         {EVENT_INFO.map((props, idx) => (
           <AboutCard key={idx} {...props} />
         ))}
