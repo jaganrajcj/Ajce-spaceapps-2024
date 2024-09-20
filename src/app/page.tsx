@@ -13,7 +13,6 @@ import Register from "@/components/registers";
 export default function Portfolio() {
   return (
     <>
-    
       <Navbar />
       <Hero />
       <AboutEvent />

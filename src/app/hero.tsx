@@ -41,7 +41,10 @@ function Hero() {
 
               <CountDown />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                <Link href="https://www.spaceappschallenge.org/nasa-space-apps-2024/2024-local-events/kanjirappally/" target="_blank">
+                <Link
+                  href="https://www.spaceappschallenge.org/nasa-space-apps-2024/2024-local-events/kanjirappally/"
+                  target="_blank"
+                >
                   <Button className="mt-5 w-full text-black bg-gradient-to-r bg-[#e7f434] hover:bg-[#007aff] focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg font-semibold rounded-lg text-md px-5 py-2.5 text-center me-2 mb-2">
                     Explore Global Challenge
                   </Button>
