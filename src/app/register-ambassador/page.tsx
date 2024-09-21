@@ -2,16 +2,16 @@
 
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { boolean, z } from "zod";
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { RegisterSchema, RegistrationType } from "@/lib/types";
-import { Ban, CheckCheck, CircleX, Loader2 } from "lucide-react";
-import { registerUser } from "../actions";
+import { CampusAmbassadorSchema, CampusAmbassadorType } from "@/lib/types";
+import { CheckCheck, CircleX, Loader2 } from "lucide-react";
+import { registerCampusAmbassador } from "../actions";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 
-type RegisterSchemaType = z.infer<typeof RegisterSchema>;
+type CampusAmbassadorSchemaType = z.infer<typeof CampusAmbassadorSchema>;
 type messageType = {
   display: boolean;
   message?: string;
@@ -23,7 +23,7 @@ const Page = () => {
   const [message, setMessage] = useState<messageType>({
     display: false,
     message: "",
-    success: true, // true for success and false for error messages
+    success: true,
   });
   const router = useRouter();
 
@@ -32,11 +32,11 @@ const Page = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<RegisterSchemaType>({
-    resolver: zodResolver(RegisterSchema),
+  } = useForm<CampusAmbassadorSchemaType>({
+    resolver: zodResolver(CampusAmbassadorSchema),
   });
 
-  const onSubmit = async (data: RegistrationType) => {
+  const onSubmit = async (data: CampusAmbassadorType) => {
     setIsLoading(true);
     setMessage({
       display: false,
@@ -44,16 +44,11 @@ const Page = () => {
       success: true,
     });
 
-    const res = await registerUser(data);
+    const res = await registerCampusAmbassador(data);
 
     setIsLoading(false);
 
     if (res.success) {
-      // setMessage({
-      //   display: true,
-      //   message: res.message,
-      //   success: true,
-      // });
       reset();
       toast.success("Registration Successful!", {
         position: "top-right",
@@ -67,10 +62,12 @@ const Page = () => {
         transition: Bounce,
       });
       setTimeout(() => {
-        router.push("/");
-      }, 5000);
+        router.push(
+          "/register-ambassador/success?referralCode=" + res.referralCode
+        );
+      }, 1000);
     } else {
-      toast.error("Registration Failed!", {
+      toast.error(res.message, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -88,10 +85,10 @@ const Page = () => {
     <div className="relative min-h-screen w-full mt-0 pt-20 md:pt-32 pb-5">
       <div className="rounded-2xl max-w-[95%] bg-gray-900/70 backdrop-blur-lg p-8 md:p-12 md:max-w-7xl mx-auto">
         <h2 className="text-lg font-semibold leading-7 text-gray-200">
-          Register your team
+          Register as a campus ambassador
         </h2>
         <p className="mt-1 text-sm leading-6 text-gray-400">
-          Type in your team details and we will be in touch
+          Enter your details we will be in touch with you!
         </p>
         {message?.display && (
           <p
@@ -114,47 +111,23 @@ const Page = () => {
         >
           <div className="sm:col-span-3">
             <label
-              htmlFor="first-name"
+              htmlFor="full-name"
               className="block text-sm font-medium leading-6 text-gray-200"
             >
-              First name
+              Full Name
             </label>
             <div className="mt-2">
               <input
-                id="first-name"
+                id="full-name"
                 disabled={isLoading}
                 type="text"
                 autoComplete="given-name"
-                {...register("firstName")}
+                {...register("fullName")}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800/70 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
               />
-              {errors.firstName && (
+              {errors.fullName && (
                 <p className="mt-1 text-sm text-red-500">
-                  {errors.firstName.message as string}
-                </p>
-              )}
-            </div>
-          </div>
-
-          <div className="sm:col-span-3">
-            <label
-              htmlFor="last-name"
-              className="block text-sm font-medium leading-6 text-gray-200"
-            >
-              Last name
-            </label>
-            <div className="mt-2">
-              <input
-                disabled={isLoading}
-                id="last-name"
-                type="text"
-                autoComplete="family-name"
-                {...register("lastName")}
-                className="block w-full rounded-md border-0 py-1.5 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800/70 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
-              />
-              {errors.lastName && (
-                <p className="mt-1 text-sm text-red-500">
-                  {errors.lastName.message as string}
+                  {errors.fullName.message as string}
                 </p>
               )}
             </div>
@@ -210,7 +183,7 @@ const Page = () => {
 
           <div className="col-span-full">
             <label
-              htmlFor="street-address"
+              htmlFor="institution"
               className="block text-sm font-medium leading-6 text-gray-200"
             >
               School / College Name
@@ -218,55 +191,15 @@ const Page = () => {
             <div className="mt-2">
               <input
                 disabled={isLoading}
-                id="street-address"
+                id="institution"
                 type="text"
-                autoComplete="street-address"
-                {...register("school")}
+                autoComplete=""
+                {...register("institution")}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800/70 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
               />
-              {errors.school && (
+              {errors.institution && (
                 <p className="mt-1 text-sm text-red-500">
-                  {errors.school.message as string}
-                </p>
-              )}
-            </div>
-          </div>
-
-          <div className="sm:col-span-3">
-            <label
-              htmlFor="district"
-              className="block text-sm font-medium leading-6 text-gray-200"
-            >
-              District
-            </label>
-            <div className="mt-2">
-              <select
-                disabled={isLoading}
-                id="district"
-                autoComplete="district-name"
-                {...register("district")}
-                className="block w-full rounded-md border-0 py-1.5 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800/70 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs sm:text-sm sm:leading-6"
-              >
-                <option value="">Select District</option>
-                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
-                <option value="Kollam">Kollam</option>
-                <option value="Pathanamthitta">Pathanamthitta</option>
-                <option value="Alappuzha">Alappuzha</option>
-                <option value="Kottayam">Kottayam</option>
-                <option value="Idukki">Idukki</option>
-                <option value="Ernakulam">Ernakulam</option>
-                <option value="Thrissur">Thrissur</option>
-                <option value="Palakkad">Palakkad</option>
-                <option value="Malappuram">Malappuram</option>
-                <option value="Kozhikode">Kozhikode</option>
-                <option value="Wayanad">Wayanad</option>
-                <option value="Kannur">Kannur</option>
-                <option value="Kasaragod">Kasaragod</option>
-                <option value="Non-Keralite">Non-Keralite</option>
-              </select>
-              {errors.district && (
-                <p className="mt-1 text-sm text-red-500">
-                  {errors.district.message as string}
+                  {errors.institution.message as string}
                 </p>
               )}
             </div>
@@ -274,23 +207,23 @@ const Page = () => {
 
           <div className="sm:col-span-3 sm:col-start-1">
             <label
-              htmlFor="teamLead"
+              htmlFor="branch"
               className="block text-sm font-medium leading-6 text-gray-200"
             >
-              Team Lead&apos;s Name (Optional)
+              Branch
             </label>
             <div className="mt-2">
               <input
                 disabled={isLoading}
-                id="teamLead"
+                id="branch"
                 type="text"
                 autoComplete=""
-                {...register("teamLead")}
+                {...register("branch")}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800/70 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
               />
-              {errors.teamLead && (
+              {errors.branch && (
                 <p className="mt-1 text-sm text-red-500">
-                  {errors.teamLead.message as string}
+                  {errors.branch.message as string}
                 </p>
               )}
             </div>
@@ -298,23 +231,23 @@ const Page = () => {
 
           <div className="sm:col-span-3">
             <label
-              htmlFor="teamLeadPhn"
+              htmlFor="year"
               className="block text-sm font-medium leading-6 text-gray-200"
             >
-              Team Lead&apos;s Phone Number (Optional)
+              Year
             </label>
             <div className="mt-2">
               <input
                 disabled={isLoading}
-                id="teamLeadPhn"
-                type="phone"
-                autoComplete="phone"
-                {...register("teamLeadPhn")}
+                id="year"
+                type="number"
+                autoComplete=""
+                {...register("year")}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800/70 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
               />
-              {errors.teamLeadPhn && (
+              {errors.year && (
                 <p className="mt-1 text-sm text-red-500">
-                  {errors.teamLeadPhn.message as string}
+                  {errors.year.message as string}
                 </p>
               )}
             </div>
@@ -322,23 +255,95 @@ const Page = () => {
 
           <div className="sm:col-span-3">
             <label
-              htmlFor="referred-by"
+              htmlFor="clubs-teams"
               className="block text-sm font-medium leading-6 text-gray-200"
             >
-              Referral Code (Optional)
+              Clubs, Teams, Activities you're in? Tell us more about your role?
             </label>
             <div className="mt-2">
               <input
                 disabled={isLoading}
-                id="referred-by"
+                id="clubs-teams"
                 type="text"
-                autoComplete="phone"
-                {...register("referredBy")}
+                autoComplete=""
+                {...register("clubsTeamsActivities")}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800/70 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
               />
-              {errors.referredBy && (
+              {errors.clubsTeamsActivities && (
                 <p className="mt-1 text-sm text-red-500">
-                  {errors.referredBy.message as string}
+                  {errors.clubsTeamsActivities.message as string}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="sm:col-span-3">
+            <label
+              htmlFor="why-amabassador"
+              className="block text-sm font-medium leading-6 text-gray-200"
+            >
+              Why do you want to be an ambassador?
+            </label>
+            <div className="mt-2">
+              <input
+                disabled={isLoading}
+                id="why-amabassador"
+                type="text"
+                autoComplete=""
+                {...register("whyAmbassador")}
+                className="block w-full rounded-md border-0 py-1.5 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800/70 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+              />
+              {errors.whyAmbassador && (
+                <p className="mt-1 text-sm text-red-500">
+                  {errors.whyAmbassador.message as string}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="sm:col-span-3">
+            <label
+              htmlFor="links"
+              className="block text-sm font-medium leading-6 text-gray-200"
+            >
+              Any links to your social media profiles or projects?
+            </label>
+            <div className="mt-2">
+              <input
+                disabled={isLoading}
+                id="links"
+                type="text"
+                autoComplete=""
+                {...register("links")}
+                className="block w-full rounded-md border-0 py-1.5 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800/70 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+              />
+              {errors.links && (
+                <p className="mt-1 text-sm text-red-500">
+                  {errors.links.message as string}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="sm:col-span-3">
+            <label
+              htmlFor="additional"
+              className="block text-sm font-medium leading-6 text-gray-200"
+            >
+              Anything you want to tell/ask us?
+            </label>
+            <div className="mt-2">
+              <input
+                disabled={isLoading}
+                id="additional"
+                type="text"
+                autoComplete=""
+                {...register("additional")}
+                className="block w-full rounded-md border-0 py-1.5 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800/70 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+              />
+              {errors.additional && (
+                <p className="mt-1 text-sm text-red-500">
+                  {errors.additional.message as string}
                 </p>
               )}
             </div>
@@ -357,9 +362,7 @@ const Page = () => {
             </button>
           </div>
         </form>
-        {/* <button onClick={notify}>Notify!</button> */}
       </div>
-      {/* <BackgroundBeams /> */}
       <ToastContainer />
     </div>
   );

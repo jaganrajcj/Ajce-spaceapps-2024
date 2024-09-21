@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Registrations {
-  id            Int    @id @default(autoincrement())
+  id            Int      @id @default(autoincrement())
   firstName     String
   lastName      String
   email         String
@@ -23,6 +23,9 @@ model Registrations {
   district      String
   teamLeadName  String
   teamLeadPhone String
+  referredBy    String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @default(now()) @updatedAt
 }
 
 model User {
@@ -32,4 +35,21 @@ model User {
   name      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Ambassador {
+  id                   Int      @id @default(autoincrement())
+  email                String   @unique
+  referralCode         String   @unique
+  fullName             String
+  phone                String
+  institution          String
+  branch               String
+  year                 String
+  whyAmbassador        String
+  clubsTeamsActivities String?
+  links                String?
+  additional           String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
 }
