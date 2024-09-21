@@ -106,6 +106,7 @@ export const registerCampusAmbassador = async (data: CampusAmbassadorType) => {
     return {
       success: true,
       message: "Registration successful, we'll be in touch with you shortly!",
+      referralCode,
     };
   } catch (err) {
     console.log(err);

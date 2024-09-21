@@ -1,6 +1,5 @@
 "use client";
 
-import { BackgroundBeams } from "@/components/background-beams";
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { boolean, z } from "zod";
@@ -67,15 +66,10 @@ const Page = () => {
         theme: "light",
         transition: Bounce,
       });
-      // setTimeout(() => {
-      //   router.push("/");
-      // }, 5000);
+      setTimeout(() => {
+        router.push("/");
+      }, 5000);
     } else {
-      // setMessage({
-      //   display: false,
-      //   message: res.message,
-      //   success: false,
-      // });
       toast.error("Registration Failed!", {
         position: "top-right",
         autoClose: 5000,

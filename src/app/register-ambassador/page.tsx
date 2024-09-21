@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { boolean, z } from "zod";
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CampusAmbassadorSchema, CampusAmbassadorType } from "@/lib/types";
-import { Ban, CheckCheck, CircleX, Loader2 } from "lucide-react";
+import { CheckCheck, CircleX, Loader2 } from "lucide-react";
 import { registerCampusAmbassador } from "../actions";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -62,8 +62,10 @@ const Page = () => {
         transition: Bounce,
       });
       setTimeout(() => {
-        router.push("/");
-      }, 5000);
+        router.push(
+          "/register-ambassador/success?referralCode=" + res.referralCode
+        );
+      }, 1000);
     } else {
       toast.error(res.message, {
         position: "top-right",
