@@ -20,6 +20,7 @@ export const RegisterSchema = z.object({
     .regex(/^\d{10}$/, "Team Lead's phone number must be exact 10 digits")
     .optional()
     .or(z.literal("")), // This allows an empty string as a valid input
+  referredBy: z.string().optional(),
 });
 
 export type RegistrationType = {
@@ -31,19 +32,8 @@ export type RegistrationType = {
   district: string;
   teamLead?: string;
   teamLeadPhn?: string;
+  referredBy?: string;
 };
-
-// Campus ambassador form fields
-// Full Name
-// Email
-// Phone
-// College/School - Try to get a list of Kerala schools and Colleges
-// Branch - Dropdown, Other field if branch not in dropdown
-// Year
-// Clubs, Teams, Activities you're in
-// Why do you want to be an ambassador?
-// Your links
-// Anything else?
 
 export const CampusAmbassadorSchema = z.object({
   fullName: z.string().min(1, "Full name is required"),

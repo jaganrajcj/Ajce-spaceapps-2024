@@ -37,6 +37,7 @@ export const registerUser = async (data: RegistrationType) => {
         district: validate.data.district,
         teamLeadName: validate.data.teamLead ?? "N/A",
         teamLeadPhone: validate.data.teamLeadPhn ?? "N/A",
+        referredBy: validate.data.referredBy,
       },
     });
 

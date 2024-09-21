@@ -320,6 +320,30 @@ const Page = () => {
             </div>
           </div>
 
+          <div className="sm:col-span-3">
+            <label
+              htmlFor="referred-by"
+              className="block text-sm font-medium leading-6 text-gray-200"
+            >
+              Referral Code (Optional)
+            </label>
+            <div className="mt-2">
+              <input
+                disabled={isLoading}
+                id="referred-by"
+                type="text"
+                autoComplete="phone"
+                {...register("referredBy")}
+                className="block w-full rounded-md border-0 py-1.5 text-gray-200 shadow-sm ring-1 ring-inset ring-gray-700 bg-gray-800/70 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
+              />
+              {errors.referredBy && (
+                <p className="mt-1 text-sm text-red-500">
+                  {errors.referredBy.message as string}
+                </p>
+              )}
+            </div>
+          </div>
+
           <div className="col-span-full">
             <button
               disabled={isLoading}
