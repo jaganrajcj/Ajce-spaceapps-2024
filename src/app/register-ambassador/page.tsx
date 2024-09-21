@@ -45,6 +45,7 @@ const Page = () => {
     });
 
     const res = await registerCampusAmbassador(data);
+    console.log("res", res);
 
     setIsLoading(false);
 

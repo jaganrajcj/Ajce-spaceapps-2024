@@ -3,11 +3,18 @@ import { MoveLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
+
+const ReferralCode = () => {
+  const params = useSearchParams();
+  return (
+    <span className="font-semibold text-[#e7f434]">
+      {params.get("referralCode")}
+    </span>
+  );
+};
 
 const Page = () => {
-  const params = useSearchParams();
-  console.log(params.get("referralCode"));
-
   return (
     <div className="relative min-h-screen w-full mt-0 pt-20 md:pt-32 pb-5">
       <div className="max-w-[95%] bg-gray-900/70 backdrop-blur-lg p-8 md:p-12 md:max-w-7xl mx-auto">
@@ -23,9 +30,9 @@ const Page = () => {
             </h1>
             <h2 className="text-xl md:text-2xl text-gray-200 mt-10">
               Your Referral Code:{" "}
-              <span className="font-semibold text-[#e7f434]">
-                {params.get("referralCode")}
-              </span>
+              <Suspense fallback={<span>Loading...</span>}>
+                <ReferralCode />
+              </Suspense>
             </h2>
             <p className="text-gray-400 mt-5">
               Ask your friends to use this referral code when they register!
