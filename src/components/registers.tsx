@@ -50,39 +50,36 @@ export function Register() {
       </div>
       <section className="grid grid-cols-1 lg:grid-cols-3 max-w-7xl mx-auto">
         {LINKS.map((link) => (
-          <CardContainer
-            key={link.href}
-            className="inter-var cursor-pointer py-4 w-full"
-          >
-            <CardBody className="w-[90%] bg-gradient-to-r from-gray-800 to-gray-900 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1]  h-auto rounded-xl p-6 border  ">
-              <CardItem
-                translateZ="50"
-                className="text-xl font-bold text-neutral-600 text-white"
-              >
-                {link.title}
-              </CardItem>
-              <CardItem
-                as="p"
-                translateZ="60"
-                className="text-neutral-500 text-sm max-w-sm mt-2 text-gray-300"
-              >
-                {link.subtitle}
-              </CardItem>
-              <CardItem
-                translateZ="100"
-                rotateX={10}
-                rotateZ={-5}
-                className="w-full mt-4"
-              >
-                <Link
-                  href={link.href}
-                  target={link?.target ? link?.target : "_self"}
+          <Link href={link.href} target={link?.target ? link?.target : "_self"}>
+            <CardContainer
+              key={link.href}
+              className="inter-var cursor-pointer py-4 w-full"
+            >
+              <CardBody className="w-[90%] bg-gradient-to-r from-gray-800 to-gray-900 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1]  h-auto rounded-xl p-6 border  ">
+                <CardItem
+                  translateZ="50"
+                  className="text-xl font-bold text-neutral-600 text-white"
+                >
+                  {link.title}
+                </CardItem>
+                <CardItem
+                  as="p"
+                  translateZ="60"
+                  className="text-neutral-500 text-sm max-w-sm mt-2 text-gray-300"
+                >
+                  {link.subtitle}
+                </CardItem>
+                <CardItem
+                  translateZ="100"
+                  rotateX={10}
+                  rotateZ={-5}
+                  className="w-full mt-4"
                 >
                   <Button color="white">Register</Button>
-                </Link>
-              </CardItem>
-            </CardBody>
-          </CardContainer>
+                </CardItem>
+              </CardBody>
+            </CardContainer>
+          </Link>
         ))}
       </section>
     </>
