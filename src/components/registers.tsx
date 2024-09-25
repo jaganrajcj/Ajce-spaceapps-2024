@@ -50,7 +50,7 @@ export function Register() {
       </div>
       <section className="grid grid-cols-1 lg:grid-cols-3 max-w-7xl mx-auto">
         {LINKS.map((link) => (
-          <Link href={link.href} target={link?.target ? link?.target : "_self"}>
+          <Link key={link.title} href={link.href} target={link?.target ? link?.target : "_self"}>
             <CardContainer
               key={link.href}
               className="inter-var cursor-pointer py-4 w-full"

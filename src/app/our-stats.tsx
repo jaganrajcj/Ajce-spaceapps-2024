@@ -13,8 +13,8 @@ const STATS = [
     title: "Teams",
   },
   {
-    count: "2",
-    title: "Days",
+    count: "36",
+    title: "Hours",
   },
   {
     count: "1 Lakh",

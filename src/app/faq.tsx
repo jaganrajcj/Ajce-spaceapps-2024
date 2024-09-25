@@ -44,7 +44,7 @@ const FAQS = [
   },
   {
     title: "Will there be food and drinks provided?",
-    desc: "Yes, meals and refreshments will be provided throughout the event.",
+    desc: "Refreshments will be provided, and meals are available for purchase at the canteen.",
   },
   {
     title: "How are the challenges structured?",
