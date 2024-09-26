@@ -2,6 +2,7 @@
 
 import { Typography } from "@material-tailwind/react";
 import StatsCard from "@/components/stats-card";
+import { AlertCircle } from "lucide-react";
 
 const STATS = [
   {
@@ -17,7 +18,7 @@ const STATS = [
     title: "Hours",
   },
   {
-    count: "1 Lakh",
+    count: "1.5 Lakh",
     title: "Worth of prizes",
   },
 ];
@@ -39,10 +40,19 @@ export function OurStats() {
           variant="lead"
           className="mt-3 w-full !text-gray-500 lg:w-9/12"
         >
-          NASA Space Apps Challenge 2024, the world&apos;s biggest hackathon!
+          NASA Space Apps Challenge 2024, the world's biggest hackathon!
           Experience innovation at its peak as teams from around the globe come
-          together to solve real-world problems using NASA&apos;s open data.
+          together to solve real-world problems using NASA's open data.
         </Typography>
+        <div className="mt-6 bg-white/10 backdrop-blur-sm text-white p-4 rounded-lg flex items-start">
+          <AlertCircle className="h-5 w-5 mr-3 mt-1 flex-shrink-0" />
+          <div>
+            <h3 className="font-semibold text-lg">Special Gift!</h3>
+            <p>
+              Every participant will receive a ₹1000 gift voucher from Oxygen, our digital partner!
+            </p>
+          </div>
+        </div>
       </div>
       <div>
         <div className="grid grid-cols-2 gap-8 gap-x-28">
