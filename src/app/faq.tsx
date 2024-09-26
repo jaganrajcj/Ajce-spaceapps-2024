@@ -50,6 +50,10 @@ const FAQS = [
     title: "How are the challenges structured?",
     desc: "The challenges are divided into various themes based on real-world problems. Teams choose a challenge that interests them and work on developing a solution over the course of the hackathon.",
   },
+  {
+    title: "Where is the event taking place?",
+    desc: "The event will be held at Amal Jyothi College of Engineering, Kanjirapally. The full address is: Amal Jyothi College of Engineering, Koovapally P.O, Kanjirapally, Kottayam District, Kerala, India - 686518.",
+  },
 ];
 
 export function Faq() {
