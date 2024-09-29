@@ -13,9 +13,25 @@ function Hero() {
       <div className="grid min-h-screen px-8">
         <div className="container relative z-10 my-auto mx-auto grid grid-cols-1 lg:grid-cols-2 place-items-center text-center lg:text-left">
           <div className="order-1 lg:order-1">
-            <Typography variant="h1" color="white" className="lg:max-w-3xl">
+            <Typography
+              variant="h1"
+              color="white"
+              className="mt-16 lg:max-w-3xl"
+            >
               NASA Space Apps Challenge 2024
             </Typography>
+
+            <Typography variant="h4" color="white" className="mt-8">
+              Our Digital Partner
+            </Typography>
+            <Image
+              src={"/image/logo-oxygen.png"}
+              width={300}
+              height={50}
+              alt="nasa-logo"
+              className="mt-[-70px] mb-[-70px] lg:ml-[-15px] mx-auto" // god save us
+            />
+
             <Typography
               variant="lead"
               color="white"
