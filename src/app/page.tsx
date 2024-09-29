@@ -9,12 +9,14 @@ import EventContent from "./event-content";
 import Faq from "./faq";
 import ContactUs from "@/components/contact";
 import Register from "@/components/registers";
+import Sponsors from "./sponsors";
 
 export default function Portfolio() {
   return (
     <>
       <Navbar />
       <Hero />
+      <Sponsors />
       <AboutEvent />
       <OurStats />
       <EventContent />
