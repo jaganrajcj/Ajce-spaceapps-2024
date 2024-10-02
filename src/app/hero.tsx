@@ -21,16 +21,20 @@ function Hero() {
               NASA Space Apps Challenge 2024
             </Typography>
 
-            <Typography variant="h4" color="white" className="mt-8">
-              Our Digital Partner
-            </Typography>
-            <Image
-              src={"/image/logo-oxygen.png"}
-              width={300}
-              height={50}
-              alt="nasa-logo"
-              className="mt-[-70px] mb-[-70px] lg:ml-[-15px] mx-auto" // god save us
-            />
+            <div className="mt-8 mb-8">
+              <Typography variant="h5" color="orange" className="mb-2">
+                Our Digital Partner
+              </Typography>
+              <div className="flex justify-center lg:justify-start">
+                <Image
+                  src="/image/logo-oxygen.png"
+                  width={300}
+                  height={50}
+                  alt="Oxygen Shop Logo"
+                  className="w-full max-w-[300px] h-auto"
+                />
+              </div>
+            </div>
 
             <Typography
               variant="lead"

@@ -10,6 +10,7 @@ import Faq from "./faq";
 import ContactUs from "@/components/contact";
 import Register from "@/components/registers";
 import Sponsors from "./sponsors";
+import Prizes from "@/components/Prizes";
 
 export default function Portfolio() {
   return (
@@ -19,6 +20,7 @@ export default function Portfolio() {
       <Sponsors />
       <AboutEvent />
       <OurStats />
+      <Prizes />
       <EventContent />
       <Register />
       <Faq />
