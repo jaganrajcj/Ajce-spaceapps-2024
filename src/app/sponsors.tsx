@@ -26,7 +26,7 @@ const sponsorData = [
       },
       { name: "Other Sponsor 1", image: "/image/other-sponsors/2.png" },
       { name: "Other Sponsor 2", image: "/image/other-sponsors/3.png" },
-      { name: "Other Sponsor 3", image: "/image/other-sponsors/1.png" },
+      { name: "Other Sponsor 3", image: "/image/other-sponsors/etomelogo.png" },
 
     ],
   },
