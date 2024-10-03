@@ -26,16 +26,20 @@ const sponsorData = [
       },
       { name: "Other Sponsor 1", image: "/image/other-sponsors/2.png" },
       { name: "Other Sponsor 2", image: "/image/other-sponsors/3.png" },
+      { name: "Other Sponsor 3", image: "/image/other-sponsors/1.png" },
+
     ],
   },
   {
-    type: "Collaborators",
+    type: "Organizing Partners & Collaborators",
     sponsors: [
       { name: "Collaborator 1", image: "/image/collaborators/1.png" },
       { name: "Collaborator 3", image: "/image/collaborators/7.png" },
-      { name: "Collaborator 4", image: "/image/collaborators/8.png" },
+      { name: "Collaborator 4", image: "/image/collaborators/3.png" },
       { name: "Collaborator 5", image: "/image/collaborators/9.png" },
       { name: "Collaborator 6", image: "/image/collaborators/10.png" },
+      { name: "Collaborator 6", image: "/image/collaborators/8.png" },
+
     ],
   },
 ];

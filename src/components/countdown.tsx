@@ -84,7 +84,8 @@ const CountDown: React.FC = () => {
   }, []);
 
   // Set the event start date to October 5, 2024
-  const eventDate = new Date("2024-10-05T00:00:00");
+  const eventDate = new Date("2024-10-05T09:00:00");
+
 
   return (
     <div>

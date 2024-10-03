@@ -27,7 +27,7 @@ function Hero() {
               </Typography>
               <div className="flex justify-center lg:justify-start">
                 <Image
-                  src="/image/logo-oxygen2.png"
+                  src="/image/oxygen-logo.png"
                   width={300}
                   height={50}
                   alt="Oxygen Shop Logo"
