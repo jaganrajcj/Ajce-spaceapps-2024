@@ -16,6 +16,7 @@ import {
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import Image from "next/image";
+import { Trophy } from "lucide-react";
 
 interface NavItemProps {
   children: React.ReactNode;
@@ -38,8 +39,9 @@ const NAV_MENU = [
     icon: RectangleStackIcon,
   },
   {
-    name: "Highlights",
+    name: "View Results",
     icon: UserCircleIcon,
+    href: "/winners",
   },
   {
     name: "Contact Us",
@@ -109,9 +111,9 @@ export function Navbar() {
           ))}
         </ul> */}
         <div className="hidden items-center gap-4 lg:flex">
-          {/* <Button color={isScrolling ? "gray" : "white"} variant="text">
-            Log in
-          </Button> */}
+          <Link href="/winners" className="text-white mr-5 text-lg font-semibold flex flex-row items-center">
+          <Trophy className="h-5 w-5 mr-2 font-semibold"/>View Results
+          </Link>
           <Link href="#register">
             <Button color={isScrolling ? "white" : "white"}>Register</Button>
           </Link>

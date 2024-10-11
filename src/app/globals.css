@@ -6,3 +6,12 @@ body {
     background-color: black;
 }
 
+
+@layer utilities {
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+    .rotateX-10 {
+      transform: rotateX(10deg);
+    }
+  }
